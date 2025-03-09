@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='static/styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Stock Price Prediction</h1>
+      <form method="post">
+        <label for="stock_symbol">Enter Stock Symbol:</label>
+        <input type="text" id="stock_symbol" name="stock_symbol">
+        <button type="submit">Predict</button>
+      </form>
+      <div id="prediction-result"></div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Stock Price Prediction</p>
+    </footer>
+    <script src="{{ url_for('static', filename='static/app.js') }}"></script>
+  </body>
+</html>
