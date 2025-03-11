@@ -1,6 +1,6 @@
 # app.py
 from flask import Flask, render_template, request
-from model_prediction import load_saved_model, predict_next_four_days
+from model_prediction import load_saved_model, predict_next_n_days
 
 app = Flask(__name__)
 
@@ -14,7 +14,7 @@ model, scaler = load_saved_model()
 def index():
     if request.method == 'POST':
         stock_symbol = request.form['stock_symbol']
-        prediction = predict_next_four_days(stock_symbol, model, scaler)
+        prediction = predict_next_n_days(stock_symbol, model, scaler, api_key)
         return render_template('result.html', prediction=prediction)
     return render_template('index.html')
 
